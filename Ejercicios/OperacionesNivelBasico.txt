@@ -1,0 +1,27 @@
+#! /usr/bin/perl
+use strict;
+print "Ingrese el primer numero: ";
+#Pedimos los numeros por teclado
+my $numero1=<STDIN>;
+#El STDIN es para almcenar una variable que se pide por teclado
+#Almacenamos los numeros ingresados en variables
+print "Ingrese el segundo numero: ";
+my $numero2=<STDIN>;
+#Esto se hace 2 veces para pedir 2 numeros
+my $suma=$numero1 + $numero2;
+my $resta=$numero1 - $numero2;
+my $producto=$numero1 * $numero2;
+my $division=$numero1 / $numero2;
+my $modulo=$numero1 % $numero2;
+#Ponemos variables que almacenen las operaciones basicas de los 2 numeros
+chomp($numero1);
+chomp($numero2);
+#Ponemos el chomp para que no salte a la siguiente linea una vez se usen las variables para las operaciones
+print "La suma de $numero1 y $numero2 es $suma\n";
+print "La resta de $numero1 y $numero2 es $resta\n";
+print "La multiplicacion de $numero1 y $numero2 es $producto\n";
+print "La division de $numero1 y $numero2 es $division\n";
+print "El modulo de $numero1 y $numero2 es $modulo\n";
+#Imprimimos todas las operaciones y colocamos el \n para saltar a la linea siguiente
+#Esto imprimira las operaciones en orden y sera mejor a la vista
+exit;

@@ -1,0 +1,38 @@
+#Algoritmo para una matriz transpuesta
+print "Ingrese el numero de filas de la matriz: ";
+$m=<STDIN>;
+chop($m);
+print "Ingrese el numero de columnas de la matriz: ";
+$n=<STDIN>;
+chop($n);
+for ($i=0;$i<$m;$i++){
+
+	for ($j=0;$j<$n;$j++)
+	{ $valor=<STDIN>;
+	chop ($valor);
+	$R[$i][$j]=$valor;
+        }
+}
+for($i=0;$i<$n;$i++){
+	
+	for($j=0;$j<$m;$j++)
+	{
+         $T[$i][$j]=$R[$j][$i];
+	}	
+}	
+print "Matriz Original\n";
+for($i=0;$i<$m;$i++)
+{
+	for($j=0;$j<$n;$j++)
+	{print $R[$i][$j]," ";
+	}
+	print "\n";
+}	
+print "Matriz Transupesta\n";
+for ($i=0;$i<$n;$i++)
+{
+	for($j=0;$j<$m;$j++)
+	{print $T [$i][$j]," ";
+	}
+	print "\n";
+}

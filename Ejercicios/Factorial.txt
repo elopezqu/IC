@@ -1,0 +1,9 @@
+print "ESCRIBA UN NUMERO PARA HALLAR LA FACTORIAL: \n";
+print "\n";
+$numero = <>;
+$total = 1;
+for($i = 1 ; $i <= $numero ; $i++ ) {
+ $total = $total * $i;
+}
+print "El factorial es: ", $total;
+print "\n";

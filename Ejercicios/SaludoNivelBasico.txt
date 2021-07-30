@@ -1,0 +1,9 @@
+#! /usr/bin/perl
+use strict;
+print "Ingrese el tu nombre: ";
+#Pedimos el nombre por teclado.
+my $nombre=<STDIN>;
+#Almacenamos una variable con STDIN que se pide desde teclado.
+print "Hola $nombre";
+#Imprime un Hola junto al nombre que se pidio.
+exit;

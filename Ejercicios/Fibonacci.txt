@@ -1,0 +1,20 @@
+#Serie Fibonacci
+
+#variables
+my $n;
+my $suma=0;
+my $aux;
+my $num=1;
+
+#Interaccion con el usuario
+print "Cuantos numeros de Fibonacci desea obtener? \n";
+$n = <STDIN>;   #Una serie de "n" numeros 
+
+#Se hace unso de un bucle "for" para sumar el termino anterior
+for(my $i=0;$i<$n;$i++){
+	$aux=$suma;
+	$suma = $suma + $num;
+	$num=$aux;
+	print "$suma ";#Se imprimi uno por uno los resultados
+}
+print "\n"; #Salto de linea para la estetica 
