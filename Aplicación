@@ -1,0 +1,37 @@
+#SIMULADOR DE LANZAMIENTO DE 2 DADOS
+
+#Para los sistemas operativos que usan dos caracteres (Windows) para separar líneas dentro de archivos de texto
+#pero no tiene ningún efecto en los sistemas operativos que usan caracteres únicos (Unix, Mac OS, QNX)
+use strict;
+binmode (STDOUT,":encoding(cp850)");
+binmode (STDIN,":encoding(cp850)");
+#Variables Declaradas
+my @frecuencias=(0,0,0,0,0,0,0,0,0,0,0);    #Arreglo para la frecuencia de las sumas posibles
+my @sumaPosible = (2 ,3 ,4 ,5 ,6,7,8,9,10,11,12);   #Arreglo de las sumas posibles
+my $suma; 
+my $dado1;   
+my $dado2;
+#Código
+print "Ingrese numero de lanzamientos de los 2 dados: ";  #Se pide un número de lanzamientos
+$a=<STDIN>;   #Dicho número de lanzamientos se almacena aquí
+for(my $i=0;$i<$a;$i++){        #Bucle for para los datos de los dados
+   $dado1= 1 + int(rand(6));  #Genera aleatoriamente un numero entre 1-6
+   $dado2= 1 + int(rand(6));  #Genera aleatoriamente un numero entre 1-6
+   $suma=$dado1+$dado2;  #Se suman ambos resultados
+   $frecuencias[$suma-2]++;  #Se aumenta en 1 a la variable de la posición, suma-2   
+}
+for(my $i=0;$i<11;$i++){
+  print "$frecuencias[$i] ";  #Se imprime las frecuencias para corroborar lo del gráfico
+}
+#Gnuplot
+open (ARCHIVO,'>','archivo.dat'); #Nombre del archivo
+foreach my $x (0..@sumaPosible-1){
+  print ARCHIVO $sumaPosible[$x]; # Eje vertical
+  print ARCHIVO " ";
+  print ARCHIVO $frecuencias[$x]; # Eje Horizontal
+  print ARCHIVO "\n";
+ }
+close(ARCHIVO);
+
+my $resultado = `C:\\Users\\USER\\Desktop\\grafico2.gp`; #Dirección del archico 
+print $resultado; #Se muestra la grafica
